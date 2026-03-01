@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cd4mo1r23duqd"]
+
+[ext_resource type="Script" uid="uid://cfmbd184xbtd" path="res://3DDemo/3d_demo.gd" id="1_4nbt0"]
+[ext_resource type="Texture2D" uid="uid://dad8isst24usc" path="res://icon.svg" id="2_qnhtk"]
+[ext_resource type="Texture2D" uid="uid://b1spim3cxcxq0" path="res://bunny.png" id="3_s5fqo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4nbt0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_qnhtk"]
+sky_material = SubResource("ProceduralSkyMaterial_4nbt0")
+
+[sub_resource type="Environment" id="Environment_s5fqo"]
+background_mode = 2
+sky = SubResource("Sky_qnhtk")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_811r0"]
+albedo_color = Color(0.42948467, 0.42677128, 0.3834146, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_x8k5m"]
+material = SubResource("StandardMaterial3D_811r0")
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qgai"]
+albedo_texture = ExtResource("2_qnhtk")
+uv1_scale = Vector3(1.275, 1.275, 1.275)
+uv1_offset = Vector3(-0.14, -0.04, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_61jx1"]
+radius = 1.0
+height = 2.0
+radial_segments = 6
+rings = 4
+
+[node name="3dDemo" type="Node3D" unique_id=698847857]
+script = ExtResource("1_4nbt0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2071715289]
+environment = SubResource("Environment_s5fqo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1214697560]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=798288015]
+mesh = SubResource("PlaneMesh_x8k5m")
+
+[node name="Facing" type="Node3D" parent="." unique_id=1189213811]
+
+[node name="Godot" type="MeshInstance3D" parent="Facing" unique_id=2049889528]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.031204224, 1.0217516, 0)
+material_override = SubResource("StandardMaterial3D_7qgai")
+mesh = SubResource("SphereMesh_61jx1")
+
+[node name="Target" type="Node3D" parent="." unique_id=59299158]
+
+[node name="Bunny" type="Sprite3D" parent="Target" unique_id=581781495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9715073, -2.1672404)
+billboard = 2
+texture = ExtResource("3_s5fqo")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=748647931]
+transform = Transform3D(0.8093862, -0.22563095, 0.5422036, 0, 0.92325044, 0.38419864, -0.5872768, -0.3109651, 0.7472661, 2.3399158, 1.9649707, 2.8501546)
+
+[node name="Panel" type="Panel" parent="." unique_id=854996368]
+modulate = Color(0.6509804, 1, 0.72156864, 1)
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 239.0
+offset_bottom = 196.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=111123884]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1

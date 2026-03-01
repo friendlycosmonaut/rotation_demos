@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://dlp0hmgydrwla"]
+
+[ext_resource type="Script" uid="uid://cgh7dyoce2vst" path="res://2D/demo_2d.gd" id="1_umdxf"]
+[ext_resource type="Texture2D" uid="uid://dad8isst24usc" path="res://Assets/icon.svg" id="2_0miaj"]
+[ext_resource type="Texture2D" uid="uid://b1spim3cxcxq0" path="res://Assets/bunny.png" id="3_wppxa"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rnorq"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_feuvl"]
+size = Vector2(1.1, 0.005)
+
+[sub_resource type="QuadMesh" id="QuadMesh_b3see"]
+size = Vector2(0.005, 1.1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_psnrn"]
+size = Vector2(1, 0.005)
+
+[node name="Demo" type="Node2D" unique_id=1745734289]
+
+[node name="Position" type="Node2D" parent="." unique_id=627966604]
+position = Vector2(640, 360)
+
+[node name="Background" type="ColorRect" parent="Position" unique_id=477862217]
+offset_left = -5503.653
+offset_top = -4301.54
+offset_right = 5413.347
+offset_bottom = 3243.46
+color = Color(0.23753911, 0.23753914, 0.23753911, 1)
+
+[node name="Panel" type="Panel" parent="Position" unique_id=344044374]
+modulate = Color(0.6509804, 1, 0.72156864, 1)
+offset_left = -95.0
+offset_top = -300.0
+offset_right = 94.0
+offset_bottom = -154.0
+
+[node name="Label" type="Label" parent="Position/Panel" unique_id=758214081]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArcTangent" type="Node2D" parent="Position" unique_id=2090178346]
+modulate = Color(1, 0.654902, 1, 1)
+position = Vector2(-320, 50)
+script = ExtResource("1_umdxf")
+
+[node name="BackgroundCircle" type="MeshInstance2D" parent="Position/ArcTangent" unique_id=1984467267]
+modulate = Color(0.15487596, 0.154876, 0.15487596, 1)
+scale = Vector2(535.1716, 535.1716)
+mesh = SubResource("SphereMesh_rnorq")
+
+[node name="Label" type="Label" parent="Position/ArcTangent" unique_id=658852568]
+offset_left = 20.0
+offset_top = -220.99998
+offset_right = 109.0
+offset_bottom = -197.99998
+text = "ArcTangent"
+
+[node name="AxisX" type="MeshInstance2D" parent="Position/ArcTangent" unique_id=969130755]
+scale = Vector2(535.1716, 535.1716)
+mesh = SubResource("QuadMesh_feuvl")
+
+[node name="AxisY" type="MeshInstance2D" parent="Position/ArcTangent" unique_id=109312922]
+scale = Vector2(535.1716, 535.1716)
+mesh = SubResource("QuadMesh_b3see")
+
+[node name="LabelX" type="Label" parent="Position/ArcTangent" unique_id=1405633180]
+offset_left = 299.347
+offset_top = -11.540009
+offset_right = 339.347
+offset_bottom = 11.459991
+text = "X"
+
+[node name="LabelY" type="Label" parent="Position/ArcTangent" unique_id=533133434]
+offset_left = -19.653015
+offset_top = -320.54
+offset_right = 20.346985
+offset_bottom = -297.54
+text = "Y"
+horizontal_alignment = 1
+
+[node name="AngleLine" type="Node2D" parent="Position/ArcTangent" unique_id=308981282]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Position/ArcTangent/AngleLine" unique_id=754843602]
+modulate = Color(0.9345259, 0, 0.29068345, 1)
+position = Vector2(134.34695, -0.54000854)
+scale = Vector2(266.46323, 535.1716)
+mesh = SubResource("QuadMesh_psnrn")
+
+[node name="Facing" type="Node2D" parent="Position/ArcTangent" unique_id=53768184]
+
+[node name="Icon" type="Sprite2D" parent="Position/ArcTangent/Facing" unique_id=1316145274]
+modulate = Color(1.8825028, 0, 0.47475398, 1)
+rotation = -1.5707964
+texture = ExtResource("2_0miaj")
+
+[node name="Target" type="Sprite2D" parent="Position/ArcTangent" unique_id=743544132]
+position = Vector2(260, 0)
+texture = ExtResource("3_wppxa")
+
+[node name="Label" type="Label" parent="Position/ArcTangent/Target" unique_id=1577570839]
+offset_left = -22.0
+offset_top = 37.0
+offset_right = 18.0
+offset_bottom = 60.0
+
+[node name="ArcTangent2" type="Node2D" parent="Position" unique_id=780818840]
+position = Vector2(320, 50)
+script = ExtResource("1_umdxf")
+
+[node name="BackgroundCircle" type="MeshInstance2D" parent="Position/ArcTangent2" unique_id=371026118]
+modulate = Color(0.15487596, 0.154876, 0.15487596, 1)
+scale = Vector2(535.1716, 535.1716)
+mesh = SubResource("SphereMesh_rnorq")
+
+[node name="Label" type="Label" parent="Position/ArcTangent2" unique_id=1535733705]
+modulate = Color(0.45882353, 0.96862745, 1, 1)
+offset_left = 19.999939
+offset_top = -221.0
+offset_right = 108.99994
+offset_bottom = -198.0
+text = "ArcTangent"
+
+[node name="AxisX" type="MeshInstance2D" parent="Position/ArcTangent2" unique_id=1770604446]
+scale = Vector2(535.1716, 535.1716)
+mesh = SubResource("QuadMesh_feuvl")
+
+[node name="AxisY" type="MeshInstance2D" parent="Position/ArcTangent2" unique_id=1126726619]
+scale = Vector2(535.1716, 535.1716)
+mesh = SubResource("QuadMesh_b3see")
+
+[node name="LabelX" type="Label" parent="Position/ArcTangent2" unique_id=1607812383]
+offset_left = 299.34692
+offset_top = -11.540009
+offset_right = 339.34692
+offset_bottom = 11.459991
+text = "X"
+
+[node name="LabelY" type="Label" parent="Position/ArcTangent2" unique_id=519568589]
+offset_left = -19.653015
+offset_top = -320.54
+offset_right = 20.346985
+offset_bottom = -297.54
+text = "Y"
+horizontal_alignment = 1
+
+[node name="AngleLine" type="Node2D" parent="Position/ArcTangent2" unique_id=1187631375]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Position/ArcTangent2/AngleLine" unique_id=1808983607]
+modulate = Color(0.45779592, 0.9681068, 0.9999998, 1)
+position = Vector2(134.34695, -0.54000854)
+scale = Vector2(266.46323, 535.1716)
+mesh = SubResource("QuadMesh_psnrn")
+
+[node name="Facing" type="Node2D" parent="Position/ArcTangent2" unique_id=86122865]
+
+[node name="Icon" type="Sprite2D" parent="Position/ArcTangent2/Facing" unique_id=1251369514]
+rotation = -1.5707964
+texture = ExtResource("2_0miaj")
+
+[node name="Target" type="Sprite2D" parent="Position/ArcTangent2" unique_id=185261440]
+position = Vector2(260, 0)
+texture = ExtResource("3_wppxa")
+
+[node name="Label" type="Label" parent="Position/ArcTangent2/Target" unique_id=736604353]
+offset_left = -22.0
+offset_top = 37.0
+offset_right = 18.0
+offset_bottom = 60.0
