@@ -76,6 +76,7 @@ mesh = SubResource("PlaneMesh_x8k5m")
 
 [node name="ArcTangent" type="Node3D" parent="." unique_id=1742287683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+visible = false
 script = ExtResource("2_vfy2k")
 use_atan2 = false
 
@@ -125,7 +126,6 @@ material_override = SubResource("StandardMaterial3D_rf1jw")
 mesh = SubResource("SphereMesh_rf1jw")
 
 [node name="ArcTangent2" type="Node3D" parent="." unique_id=128622055]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
 script = ExtResource("2_vfy2k")
 
 [node name="Looker" type="Node3D" parent="ArcTangent2" unique_id=943780006]
@@ -144,6 +144,7 @@ mesh = SubResource("BoxMesh_rf1jw")
 
 [node name="Bunny" type="Sprite3D" parent="ArcTangent2/Target" unique_id=976973146]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9715073, -2.1672404)
+visible = false
 billboard = 1
 texture = SubResource("CompressedTexture2D_4nbt0")
 

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://xgvwvfew232e"]
+
+[ext_resource type="Material" uid="uid://cwa12pe78o35g" path="res://Assets/godotnaut_head.tres" id="1_nbcp4"]
+[ext_resource type="Material" uid="uid://bjjo2cs7yid0w" path="res://Assets/godotnaut_body.tres" id="2_pughj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_khmlp"]
+radius = 0.3
+height = 0.6
+radial_segments = 6
+rings = 4
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_khmlp"]
+radius = 0.3
+height = 0.8
+radial_segments = 5
+rings = 2
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_okoa4"]
+radius = 0.1
+height = 0.8
+radial_segments = 4
+rings = 4
+
+[node name="GodotNaut" type="Node3D" unique_id=1619966047]
+
+[node name="Head" type="MeshInstance3D" parent="." unique_id=1176421220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6774739, 0)
+material_override = ExtResource("1_nbcp4")
+mesh = SubResource("SphereMesh_khmlp")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=965387473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0542302, 0)
+material_override = ExtResource("2_pughj")
+mesh = SubResource("CapsuleMesh_khmlp")
+
+[node name="LegL" type="MeshInstance3D" parent="." unique_id=1569652046]
+transform = Transform3D(0.9894121, -0.14513332, 0, 0.14513332, 0.9894121, 0, 0, 0, 1, 0.2, 0.413, 0)
+material_override = ExtResource("2_pughj")
+mesh = SubResource("CapsuleMesh_okoa4")
+
+[node name="LegR" type="MeshInstance3D" parent="." unique_id=817260975]
+transform = Transform3D(0.9895259, 0.1443562, 0, -0.1443562, 0.9895259, 0, 0, 0, 1, -0.2, 0.413, 0)
+material_override = ExtResource("2_pughj")
+mesh = SubResource("CapsuleMesh_okoa4")
+
+[node name="ArmL" type="MeshInstance3D" parent="." unique_id=837703693]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.549, 1.3172697, 0)
+material_override = ExtResource("2_pughj")
+mesh = SubResource("CapsuleMesh_okoa4")
+
+[node name="ArmR" type="MeshInstance3D" parent="." unique_id=489353800]
+transform = Transform3D(-4.3711392e-08, 1.0000001, 0, -1.0000001, -4.3711392e-08, 0, 0, 0, 1, -0.549, 1.3172697, 0)
+material_override = ExtResource("2_pughj")
+mesh = SubResource("CapsuleMesh_okoa4")
